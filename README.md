@@ -2,13 +2,13 @@
 
 ![npm bundle size](https://img.shields.io/bundlephobia/minzip/alpinejs)
 
-Alpine.js offers you the reactive and declarative nature of big frameworks like Vue or React at a much lower cost.
+Alpine.js は、Vue や React などの大きなフレームワークのリアクティブで宣言的な性質をはるかに低いコストで提供します。
 
-You get to keep your DOM, and sprinkle in behavior as you see fit.
+DOMを保持し、適切な動作を施すことができます。
 
-Think of it like [Tailwind](https://tailwindcss.com/) for JavaScript.
+[Tailwind](https://tailwindcss.com/) の JavaScript 版のようなものです。
 
-> Note: This tool's syntax is almost entirely borrowed from [Vue](https://vuejs.org/) (and by extension [Angular](https://angularjs.org/)). I am forever grateful for the gift they are to the web.
+> 注意: このツールの構文は、ほぼ完全に [Vue](https://vuejs.org/) (それと、[Angular](https://angularjs.org/)による拡張)から借用しています。ウェブからの賜り物に感謝しています。
 
 ## Install
 
