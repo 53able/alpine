@@ -29,16 +29,16 @@ npm i alpinejs
 import 'alpinejs'
 ```
 
-IE11 では、ポリフィルを提供する必要があります。 上記の Alpine スクリプトの前に次のスクリプトをロードしてください。
+IE11 では、ポリフィルを提供する必要があります。 次のスクリプトを上記の Alpine スクリプトの前にロードしてください。
 ```html
 <script src="https://polyfill.io/v3/polyfill.min.js?features=MutationObserver%2CArray.from%2CArray.prototype.forEach%2CMap%2CSet%2CArray.prototype.includes%2CString.prototype.includes%2CPromise%2CNodeList.prototype.forEach%2CObject.values%2CReflect%2CReflect.set"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/proxy-polyfill@0.3.0/proxy.min.js"></script>
 ```
 
-## Use
+## 使う
 
-*Dropdown/Modal*
+*ドロップダウン/モーダル*
 ```html
 <div x-data="{ open: false }">
     <button @click="open = true">Open Dropdown</button>
@@ -52,7 +52,7 @@ IE11 では、ポリフィルを提供する必要があります。 上記の A
 </div>
 ```
 
-*Tabs*
+*タブ*
 ```html
 <div x-data="{ tab: 'foo' }">
     <button :class="{ 'active': tab === 'foo' }" @click="tab = 'foo'">Foo</button>
@@ -63,8 +63,8 @@ IE11 では、ポリフィルを提供する必要があります。 上記の A
 </div>
 ```
 
-You can even use it for non-trivial things:
-*Pre-fetching a dropdown's HTML content on hover*
+自明ではないことにも使用できます:
+*ホバー時にドロップダウンのHTMLコンテンツをプリフェッチする*
 ```html
 <div x-data="{ open: false }">
     <button
