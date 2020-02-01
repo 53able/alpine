@@ -161,15 +161,15 @@ Vueコンポーネントの `data`プロパティのように考えてくださ�
 ---
 
 ### `x-init`
-**Example:** `<div x-data="{ foo: 'bar' }" x-init="foo = 'baz'"></div>`
+**例:** `<div x-data="{ foo: 'bar' }" x-init="foo = 'baz'"></div>`
 
-**Structure:** `<div x-data="..." x-init="[expression]"></div>`
+**構造:** `<div x-data="..." x-init="[expression]"></div>`
 
-`x-init` runs an expression when a component is initialized.
+`x-init` はコンポーネントが初期化されると式を実行します。
 
-If you wish to run code AFTER Alpine has made its initial updates to the DOM (something like a `mounted()` hook in VueJS), you can return a callback from `x-init`, and it will be run after:
+Alpine が DOM（VueJS の `mounted()` フックのようなもの）に最初の更新を行った後にコードを実行したい場合、 `x-init` からコールバックを返すことができ、その後実行されます：
 
-`x-init="return () => { // we have access to the post-dom-initialization state here // }"`
+`x-init="return () => { // ここで初期化後の DOM ステートにアクセスできます // }"`
 
 ---
 
