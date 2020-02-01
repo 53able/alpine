@@ -12,24 +12,24 @@ DOMを保持し、適切な動作を施すことができます。
 
 ## Install
 
-**From CDN:** Add the following script to the end of your `<head>` section.
+**CDNより:** `<head>` セクションの最後に次のスクリプトを追加します。
 ```html
 <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v1.9.7/dist/alpine.js" defer></script>
 ```
 
-That's it. It will initialize itself.
+それだけです。初期は自身で行われます。
 
-**From NPM:** Install the package from NPM.
+**NPMより:** NPM からパッケージをインストールします。
 ```js
 npm i alpinejs
 ```
 
-Include it in your script.
+各自スクリプトでインクルードします。
 ```js
 import 'alpinejs'
 ```
 
-For IE11, polyfills will need to be provided. Please load the following scripts before the Alpine script above.
+IE11 では、ポリフィルを提供する必要があります。 上記の Alpine スクリプトの前に次のスクリプトをロードしてください。
 ```html
 <script src="https://polyfill.io/v3/polyfill.min.js?features=MutationObserver%2CArray.from%2CArray.prototype.forEach%2CMap%2CSet%2CArray.prototype.includes%2CString.prototype.includes%2CPromise%2CNodeList.prototype.forEach%2CObject.values%2CReflect%2CReflect.set"></script>
 
