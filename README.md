@@ -84,9 +84,9 @@ IE11 では、ポリフィルを提供する必要があります。 次のス�
 
 ## Learn
 
-There are 13 directives available to you:
+次の13のディレクティブを使用できます。
 
-| Directive
+| ディレクティブ
 | --- |
 | [`x-data`](#x-data) |
 | [`x-init`](#x-init) |
@@ -102,9 +102,9 @@ There are 13 directives available to you:
 | [`x-transition`](#x-transition) |
 | [`x-cloak`](#x-cloak) |
 
-And 5 magic properties:
+それと5つのマジックプロパティ：
 
-| Magic Properties
+| マジックプロパティ
 | --- |
 | [`$el`](#el) |
 | [`$refs`](#refs) |
@@ -113,23 +113,23 @@ And 5 magic properties:
 | [`$nextTick`](#nexttick) |
 
 
-### Directives
+### ディレクティブ
 
 ---
 
 ### `x-data`
 
-**Example:** `<div x-data="{ foo: 'bar' }">...</div>`
+**例:** `<div x-data="{ foo: 'bar' }">...</div>`
 
-**Structure:** `<div x-data="[JSON data object]">...</div>`
+**構造:** `<div x-data="[JSON data object]">...</div>`
 
-`x-data` declares a new component scope. It tells the framework to initialize a new component with the following data object.
+`x-data` は新しいコンポーネントスコープを宣言します。フレームワークに、データオブジェクトを使用して新しいコンポーネントを初期化するよう指示します。
 
-Think of it like the `data` property of a Vue component.
+Vueコンポーネントの `data`プロパティのように考えてください。
 
-**Extract Component Logic**
+**コンポーネントロジックの抽出**
 
-You can extract data (and behavior) into reusable functions:
+データ（と動作）を再利用可能な関数に抽出できます:
 
 ```html
 <div x-data="dropdown()">
@@ -152,7 +152,7 @@ You can extract data (and behavior) into reusable functions:
 </script>
 ```
 
-You can also mix-in multiple data objects using object destructuring:
+オブジェクトの構造化を使用して、複数のデータオブジェクトを混在も出来ます:
 
 ```html
 <div x-data="{...dropdown(), ...tabs()}">
