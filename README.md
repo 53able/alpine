@@ -163,7 +163,7 @@ Vueコンポーネントの `data`プロパティのように考えてくださ�
 ### `x-init`
 **例:** `<div x-data="{ foo: 'bar' }" x-init="foo = 'baz'"></div>`
 
-**構造:** `<div x-data="..." x-init="[expression]"></div>`
+**構造:** `<div x-data="..." x-init="[式]"></div>`
 
 `x-init` はコンポーネントが初期化されると式を実行します。
 
@@ -174,11 +174,11 @@ Alpine が DOM（VueJS の `mounted()` フックのようなもの）に最初�
 ---
 
 ### `x-show`
-**Example:** `<div x-show="open"></div>`
+**例:** `<div x-show="open"></div>`
 
-**Structure:** `<div x-show="[expression]"></div>`
+**構造:** `<div x-show="[式]]"></div>`
 
-`x-show` toggles the `display: none;` style on the element depending if the expression resolves to `true` or `false`.
+`x-show` は、式が `true` または `false` のどちらかの結果によって、要素の `display: none;` スタイルを切り替えます。
 
 ---
 
