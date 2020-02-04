@@ -184,15 +184,15 @@ Alpine が DOM（VueJS の `mounted()` フックのようなもの）に最初�
 
 ### `x-bind`
 
-> Note: You are free to use the shorter ":" syntax: `:type="..."`
+> 注意: 短い ":" シンタックスを使えます: `:type="..."`
 
-**Example:** `<input x-bind:type="inputType">`
+**例:** `<input x-bind:type="inputType">`
 
-**Structure:** `<input x-bind:[attribute]="[expression]">`
+**構造:** `<input x-bind:[属性]="[式]">`
 
-`x-bind` sets the value of an attribute to the result of a JavaScript expression. The expression has access to all the keys of the component's data object, and will update every-time its data is updated.
+`x-bind` は、属性の値を JavaScript 式の結果を設定します。この式は、コンポーネントのデータオブジェクトのすべてのキーにアクセスでき、データが更新されるたびに反映されます。
 
-> Note: attribute bindings ONLY update when their dependencies update. The framework is smart enough to observe data changes and detect which bindings care about them.
+> 注意: 属性バインディングは、依存関係が更新されたときにのみ更新されます。 このフレームワークは、データの変化を観察し、どのバインディングがそれらを検出するのか最適化されています。
 
 **`x-bind` for class attributes**
 
