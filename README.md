@@ -205,16 +205,16 @@ Alpine が DOM（VueJS の `mounted()` フックのようなもの）に最初�
 
 この例では、"hidden"クラスは、`foo` データ属性値が `true` の場合にのみ適用されます。
 
-**`x-bind` for boolean attributes**
+**ブール属性の `x-bind`**
 
-`x-bind` supports boolean attributes in the same way that value attributes, using a variable as the condition or any JavaScript expression that resolves to `true` or `false`.
+`x-bind` は、値属性と同じ方法でブール値属性をサポートします。条件として変数を使用するか、`true` または `false` に解決される JavaScript 式を使用します。
 
-For example:
+例:
 `<button x-bind:disabled="myVar">Click me</button>`
 
-This will add or remove the `disabled` attribute when `myVar` is true or false respectively.
+`myVar` が true または false の場合に `disabled` 属性を追加または削除します。
 
-Most common boolean attributes are supported, like `readonly`, `required`, etc.
+`readonly`、`required` など、最も一般的なブール属性がサポートされています。
 
 ---
 
