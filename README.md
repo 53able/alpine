@@ -196,14 +196,14 @@ Alpine が DOM（VueJS の `mounted()` フックのようなもの）に最初�
 
 **`x-bind` for class attributes**
 
-`x-bind` behaves a little differently when binding to the `class` attribute.
+`x-bind` は、`class` 属性にバインドするときの動作が少し異なります。
 
-For classes, you pass in an object who's keys are class names, and values are boolean expressions to determine if those class names are applied or not.
+クラスの場合、キーがクラス名であり、値がそれらのクラス名が適用されるかどうかを決定するブール式であるオブジェクトを渡します。
 
-For example:
+例:
 `<div x-bind:class="{ 'hidden': foo }"></div>`
 
-In this example, the "hidden" class will only be applied when the value of the `foo` data attribute is `true`.
+この例では、"hidden"クラスは、`foo` データ属性値が `true` の場合にのみ適用されます。
 
 **`x-bind` for boolean attributes**
 
