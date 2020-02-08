@@ -8,7 +8,7 @@ DOMを保持し、適切な動作を施すことができます。
 
 [Tailwind](https://tailwindcss.com/) の JavaScript 版のようなものです。
 
-> 注意: このツールの構文は、ほぼ完全に [Vue](https://vuejs.org/) (それと、[Angular](https://angularjs.org/)による拡張)から借用しています。ウェブからの賜り物に感謝しています。
+> 注意: このツールのシンタックスは、ほぼ完全に [Vue](https://vuejs.org/) (それと、[Angular](https://angularjs.org/)による拡張)から借用しています。ウェブからの賜り物に感謝しています。
 
 ## Install
 
@@ -220,15 +220,15 @@ Alpine が DOM（VueJS の `mounted()` フックのようなもの）に最初�
 
 ### `x-on`
 
-> Note: You are free to use the shorter "@" syntax: `@click="..."`
+> 注意： より短い"@"シンタックスを自由に使用できます: `@click="..."`
 
-**Example:** `<button x-on:click="foo = 'bar'"></button>`
+**例:** `<button x-on:click="foo = 'bar'"></button>`
 
-**Structure:** `<button x-on:[event]="[expression]"></button>`
+**構造:** `<button x-on:[event]="[expression]"></button>`
 
-`x-on` attaches an event listener to the element it's declared on. When that event is emitted, the JavaScript expression set as its value is executed.
+`x-on` は、イベントリスナを宣言された要素にアタッチします。そのイベントが発行されると、その値として設定された JavaScript 式が実行されます。
 
-If any data is modified in the expression, other element attributes "bound" to this data, will be updated.
+式でデータが変更されると、このデータに"バインドされた"他の要素属性が更新されます。
 
 **`keydown` modifiers**
 
