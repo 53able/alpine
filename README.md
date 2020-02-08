@@ -230,15 +230,15 @@ Alpine が DOM（VueJS の `mounted()` フックのようなもの）に最初�
 
 式でデータが変更されると、このデータに"バインドされた"他の要素属性が更新されます。
 
-**`keydown` modifiers**
+**`keydown` 修飾子**
 
-**Example:** `<input type="text" x-on:keydown.escape="open = false">`
+**例:** `<input type="text" x-on:keydown.escape="open = false">`
 
-You can specify specific keys to listen for using keydown modifiers appended to the `x-on:keydown` directive. Note that the modifiers are kebab-cased versions of `Event.key` values.
+`x-on：keydown` ディレクティブに追加された keydown 修飾子を使用し、待ち受けする特定のキーを指定できます。修飾子は `Event.key` 値のケバブケースであることに注意してください。
 
-Examples: `enter`, `escape`, `arrow-up`, `arrow-down`
+例: `enter`, `escape`, `arrow-up`, `arrow-down`
 
-> Note: You can also listen for system-modifier key combinations like: `x-on:keydown.cmd.enter="foo"`
+> 注意: 次のようなシステム修飾子キーの組み合わせを待ち受けもできます: `x-on：keydown.cmd.enter="foo"`
 
 **`.away` modifier**
 
