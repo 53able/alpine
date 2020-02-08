@@ -240,71 +240,71 @@ Alpine が DOM（VueJS の `mounted()` フックのようなもの）に最初�
 
 > 注意: 次のようなシステム修飾子キーの組み合わせを待ち受けもできます: `x-on：keydown.cmd.enter="foo"`
 
-**`.away` modifier**
+**`.away` 修飾子**
 
-**Example:** `<div x-on:click.away="showModal = false"></div>`
+**例:** `<div x-on:click.away="showModal = false"></div>`
 
 When the `.away` modifier is present, the event handler will only be executed when the event originates from a source other than itself, or its children.
 
 This is useful for hiding dropdowns and modals when a user clicks away from them.
 
-**`.prevent` modifier**
-**Example:** `<input type="checkbox" x-on:click.prevent>`
+**`.prevent` 修飾子**
+**例:** `<input type="checkbox" x-on:click.prevent>`
 
 Adding `.prevent` to an event listener will call `preventDefault` on the triggered event. In the above example, this means the checkbox wouldn't actually get checked when a user clicks on it.
 
-**`.stop` modifier**
-**Example:** `<div x-on:click="foo = 'bar'"><button x-on:click.stop></button></div>`
+**`.stop` 修飾子**
+**例:** `<div x-on:click="foo = 'bar'"><button x-on:click.stop></button></div>`
 
 Adding `.stop` to an event listener will call `stopPropagation` on the triggered event. In the above example, this means the "click" event won't bubble from the button to the outer `<div>`. Or in other words, when a user clicks the button, `foo` won't be set to `'bar'`.
 
-**`.window` modifier**
-**Example:** `<div x-on:resize.window="isOpen = window.outerWidth > 768 ? false : open"></div>`
+**`.window` 修飾子**
+**例:** `<div x-on:resize.window="isOpen = window.outerWidth > 768 ? false : open"></div>`
 
 Adding `.window` to an event listener will install the listener on the global window object instead of the DOM node on which it is declared. This is useful for when you want to modify component state when something changes with the window, like the resize event. In this example, when the window grows larger than 768 pixels wide, we will close the modal/dropdown, otherwise maintain the same state.
 
->Note: You can also use the `.document` modifier to attach listeners to `document` instead of `window`
+> 注意: You can also use the `.document` modifier to attach listeners to `document` instead of `window`
 
-**`.once` modifier**
-**Example:** `<button x-on:mouseenter.once="fetchSomething()"></button>`
+**`.once` 修飾子**
+**例:** `<button x-on:mouseenter.once="fetchSomething()"></button>`
 
 Adding the `.once` modifier to an event listener will ensure that the listener will only be handled once. This is useful for things you only want to do once, like fetching HTML partials and such.
 
 ---
 
 ### `x-model`
-**Example:** `<input type="text" x-model="foo">`
+**例:** `<input type="text" x-model="foo">`
 
-**Structure:** `<input type="text" x-model="[data item]">`
+**構造:** `<input type="text" x-model="[data item]">`
 
 `x-model` adds "two-way data binding" to an element. In other words, the value of the input element will be kept in sync with the value of the data item of the component.
 
-> Note: `x-model` is smart enough to detect changes on text inputs, checkboxes, radio buttons, textareas, selects, and multiple selects. It should behave [how Vue would](https://vuejs.org/v2/guide/forms.html) in those scenarios.
+> 注意: `x-model` is smart enough to detect changes on text inputs, checkboxes, radio buttons, textareas, selects, and multiple selects. It should behave [how Vue would](https://vuejs.org/v2/guide/forms.html) in those scenarios.
 
 ---
 
 ### `x-text`
-**Example:** `<span x-text="foo"></span>`
+**例:** `<span x-text="foo"></span>`
 
-**Structure:** `<span x-text="[expression]"`
+**構造:** `<span x-text="[expression]"`
 
 `x-text` works similarly to `x-bind`, except instead of updating the value of an attribute, it will update the `innerText` of an element.
 
 ---
 
 ### `x-html`
-**Example:** `<span x-html="foo"></span>`
+**例:** `<span x-html="foo"></span>`
 
-**Structure:** `<span x-html="[expression]"`
+**構造:** `<span x-html="[expression]"`
 
 `x-html` works similarly to `x-bind`, except instead of updating the value of an attribute, it will update the `innerHTML` of an element.
 
 ---
 
 ### `x-ref`
-**Example:** `<div x-ref="foo"></div><button x-on:click="$refs.foo.innerText = 'bar'"></button>`
+**例:** `<div x-ref="foo"></div><button x-on:click="$refs.foo.innerText = 'bar'"></button>`
 
-**Structure:** `<div x-ref="[ref name]"></div><button x-on:click="$refs.[ref name].innerText = 'bar'"></button>`
+**構造:** `<div x-ref="[ref name]"></div><button x-on:click="$refs.[ref name].innerText = 'bar'"></button>`
 
 `x-ref` provides a convenient way to retrieve raw DOM elements out of your component. By setting an `x-ref` attribute on an element, you are making it available to all event handlers inside an object called `$refs`.
 
@@ -313,20 +313,20 @@ This is a helpful alternative to setting ids and using `document.querySelector` 
 ---
 
 ### `x-if`
-**Example:** `<template x-if="true"><div>Some Element</div></template>`
+**例:** `<template x-if="true"><div>Some Element</div></template>`
 
-**Structure:** `<template x-if="[expression]"><div>Some Element</div></template>`
+**構造:** `<template x-if="[expression]"><div>Some Element</div></template>`
 
 For cases where `x-show` isn't sufficient (`x-show` sets an element to `display: none` if it's false), `x-if` can be used to  actually remove an element completely from the DOM.
 
 It's important that `x-if` is used on a `<template></template>` tag because Alpine doesn't use a virtual DOM. This implementation allows Alpine to stay rugged and use the real DOM to work its magic.
 
-> Note: `x-if` must have a single element root inside the `<template></template>` tag.
+> 注意: `x-if` must have a single element root inside the `<template></template>` tag.
 
 ---
 
 ### `x-for`
-**Example:**
+**例:**
 ```html
 <template x-for="item in items" :key="item">
     <div x-text="item"></div>
@@ -335,12 +335,12 @@ It's important that `x-if` is used on a `<template></template>` tag because Alpi
 
 `x-for` is available for cases when you want to create new DOM nodes for each item in an array. This should appear similar to `v-for` in Vue, with one exception of needing to exist on a `template` tag, and not a regular DOM element.
 
-> Note: the `:key` binding is optional, but HIGHLY recommended.
+> 注意: the `:key` binding is optional, but HIGHLY recommended.
 
 ---
 
 ### `x-transition`
-**Example:**
+**例:**
 ```html
 <div
     x-show="open"
@@ -382,7 +382,7 @@ These behave exactly like VueJs's transition directives, except they have differ
 ---
 
 ### `x-cloak`
-**Example:** `<div x-data="{}" x-cloak></div>`
+**例:** `<div x-data="{}" x-cloak></div>`
 
 `x-cloak` attributes are removed from elements when Alpine initializes. This is useful for hiding pre-initialized DOM. It's typical to add the following global style for this to work:
 
@@ -392,12 +392,12 @@ These behave exactly like VueJs's transition directives, except they have differ
 </style>
 ```
 
-### Magic Properties
+### マジックプロパティ
 
 ---
 
 ### `$el`
-**Example:**
+**例:**
 ```html
 <div x-data>
     <button @click="$el.innerHTML = 'foo'">Replace me with "foo"</button>
@@ -407,7 +407,7 @@ These behave exactly like VueJs's transition directives, except they have differ
 `$el` is a magic property that can be used to retrieve the root component DOM node.
 
 ### `$refs`
-**Example:**
+**例:**
 ```html
 <span x-ref="foo"></span>
 
@@ -419,7 +419,7 @@ These behave exactly like VueJs's transition directives, except they have differ
 ---
 
 ### `$event`
-**Example:**
+**例:**
 ```html
 <input x-on:input="alert($event.target.value)">
 ```
@@ -429,7 +429,7 @@ These behave exactly like VueJs's transition directives, except they have differ
 ---
 
 ### `$dispatch`
-**Example:**
+**例:**
 ```html
 <div @custom-event="console.log($event.detail.foo)">
     <button @click="$dispatch('custom-event', { foo: 'bar' })">
@@ -455,7 +455,7 @@ You can also use `$dispatch()` to trigger data updates for `x-model` bindings. F
 ---
 
 ### `$nextTick`
-**Example:**
+**例:**
 ```html
 <div x-data="{ fruit: 'apple' }">
     <button
@@ -470,7 +470,7 @@ You can also use `$dispatch()` to trigger data updates for `x-model` bindings. F
 
 `$nextTick` is a magic property that allows you to only execute a given expression AFTER Alpine has made its reactive DOM updates. This is useful for times you want to interact with the DOM state AFTER it's reflected any data updates you've made.
 
-## License
+## ライセンス
 
 Copyright © 2019-2020 Caleb Porzio and contributors
 
