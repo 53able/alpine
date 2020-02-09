@@ -244,9 +244,9 @@ Alpine が DOM（VueJS の `mounted()` フックのようなもの）に最初�
 
 **例:** `<div x-on:click.away="showModal = false"></div>`
 
-When the `.away` modifier is present, the event handler will only be executed when the event originates from a source other than itself, or its children.
+`.away` 修飾子を付与すると、イベントがそれ自体またはその子以外のソースから発生した場合にのみイベントハンドラは実行されます。
 
-This is useful for hiding dropdowns and modals when a user clicks away from them.
+ユーザがクリックしたときにドロップダウンやモーダルを非表示にするのに便利です。
 
 **`.prevent` 修飾子**
 **例:** `<input type="checkbox" x-on:click.prevent>`
