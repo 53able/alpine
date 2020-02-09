@@ -277,9 +277,9 @@ Alpine が DOM（VueJS の `mounted()` フックのようなもの）に最初�
 
 **構造:** `<input type="text" x-model="[data item]">`
 
-`x-model` adds "two-way data binding" to an element. In other words, the value of the input element will be kept in sync with the value of the data item of the component.
+`x-model` は要素に"双方向データバインディング"を追加します。つまり、入力要素の値はコンポーネントの項目データの値と同期します。
 
-> 注意: `x-model` is smart enough to detect changes on text inputs, checkboxes, radio buttons, textareas, selects, and multiple selects. It should behave [how Vue would](https://vuejs.org/v2/guide/forms.html) in those scenarios.
+> 注意: `x-model` は、テキストインプット、チェックボックス、ラジオボタン、テキストエリア、セレクト、およびマルチセレクトの変更を検出するのに最適です。これらのシナリオでは [Vue の動作](https://vuejs.org/v2/guide/forms.html)が必要です。
 
 ---
 
