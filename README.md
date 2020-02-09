@@ -251,12 +251,12 @@ Alpine が DOM（VueJS の `mounted()` フックのようなもの）に最初�
 **`.prevent` 修飾子**
 **例:** `<input type="checkbox" x-on:click.prevent>`
 
-Adding `.prevent` to an event listener will call `preventDefault` on the triggered event. In the above example, this means the checkbox wouldn't actually get checked when a user clicks on it.
+イベントリスナに `.prevent` を追加すると、トリガされたイベントで `preventDefault` が呼び出されます。上記の例では、ユーザがクリックしたときにチェックボックスが実際にチェックされないことを意味します。
 
 **`.stop` 修飾子**
 **例:** `<div x-on:click="foo = 'bar'"><button x-on:click.stop></button></div>`
 
-Adding `.stop` to an event listener will call `stopPropagation` on the triggered event. In the above example, this means the "click" event won't bubble from the button to the outer `<div>`. Or in other words, when a user clicks the button, `foo` won't be set to `'bar'`.
+イベントリスナに `.stop` を追加すると、トリガされたイベントで`stopPropagation` が呼び出されます。上記の例では、ボタンから外側の `<div>` に"click"イベントが浮上しないことを意味します。言い換えると、ユーザがボタンをクリックしても、`foo` は`'bar'`に設定されません。
 
 **`.window` 修飾子**
 **例:** `<div x-on:resize.window="isOpen = window.outerWidth > 768 ? false : open"></div>`
