@@ -268,7 +268,7 @@ Alpine が DOM（VueJS の `mounted()` フックのようなもの）に最初�
 **`.once` 修飾子**
 **例:** `<button x-on:mouseenter.once="fetchSomething()"></button>`
 
-Adding the `.once` modifier to an event listener will ensure that the listener will only be handled once. This is useful for things you only want to do once, like fetching HTML partials and such.
+イベントリスナに `.once` 修飾子を付与すると、リスナが1回だけ処理されることが保証されます。HTML パーシャルの取得など、1度だけ実行したい場合に便利です。
 
 ---
 
