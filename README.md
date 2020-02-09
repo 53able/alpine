@@ -261,9 +261,9 @@ Alpine が DOM（VueJS の `mounted()` フックのようなもの）に最初�
 **`.window` 修飾子**
 **例:** `<div x-on:resize.window="isOpen = window.outerWidth > 768 ? false : open"></div>`
 
-Adding `.window` to an event listener will install the listener on the global window object instead of the DOM node on which it is declared. This is useful for when you want to modify component state when something changes with the window, like the resize event. In this example, when the window grows larger than 768 pixels wide, we will close the modal/dropdown, otherwise maintain the same state.
+イベントリスナに `.window` を付与すると、それが宣言されている DOM ノードではなく、グローバル window オブジェクトにリスナがインストールされます。これは、resize イベントなど window で何かが変更されたときにコンポーネントの状態を変更する場合に役立ちます。この例では、ウィンドウの幅が768ピクセルを超えた場合、モーダル/ドロップダウンを閉じます。それ以外の場合は同じ状態を維持します。
 
-> 注意: You can also use the `.document` modifier to attach listeners to `document` instead of `window`
+> 注意: `.document` 修飾子を使用して、リスナを `window` の代わりに `document` にアタッチすることもできます。
 
 **`.once` 修飾子**
 **例:** `<button x-on:mouseenter.once="fetchSomething()"></button>`
