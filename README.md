@@ -288,7 +288,7 @@ Alpine が DOM（VueJS の `mounted()` フックのようなもの）に最初�
 
 **構造:** `<span x-text="[expression]"`
 
-`x-text` works similarly to `x-bind`, except instead of updating the value of an attribute, it will update the `innerText` of an element.
+`x-text` は `x-bind` と同様に機能しますが、属性値を更新する代わりに要素の `innerText` を更新します。
 
 ---
 
@@ -297,7 +297,7 @@ Alpine が DOM（VueJS の `mounted()` フックのようなもの）に最初�
 
 **構造:** `<span x-html="[expression]"`
 
-`x-html` works similarly to `x-bind`, except instead of updating the value of an attribute, it will update the `innerHTML` of an element.
+`x-html` は `x-bind` と同様に機能しますが、属性の値を更新する代わりに要素の `innerHTML` を更新します。
 
 ---
 
