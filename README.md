@@ -468,10 +468,10 @@ Alpine の初期化時に、要素から `x-cloak` 属性が削除されます�
 </div>
 ```
 
-`$nextTick` is a magic property that allows you to only execute a given expression AFTER Alpine has made its reactive DOM updates. This is useful for times you want to interact with the DOM state AFTER it's reflected any data updates you've made.
+`$nextTick` は、Alpine がリアクティブな DOM 更新を行った後、指定された式のみを実行できるマジックプロパティです。これは、データ更新が反映された後に DOM ステートとやり取りしたい場合に便利です。
 
 ## ライセンス
 
 Copyright © 2019-2020 Caleb Porzio and contributors
 
-Licensed under the MIT license, see [LICENSE.md](LICENSE.md) for details.
+MIT ライセンスの下でライセンスされています。詳細については、[LICENSE.md](LICENSE.md) を参照してください。
