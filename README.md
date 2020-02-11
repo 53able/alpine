@@ -4,11 +4,11 @@
 
 Alpine.js は、Vue や React などの大きなフレームワークのリアクティブで宣言的な性質をはるかに低いコストで提供します。
 
-DOMを保持し、適切な動作を施すことができます。
+DOM を保持し、適切な動作を施すことができます。
 
 [Tailwind](https://tailwindcss.com/) の JavaScript 版のようなものです。
 
-> 注意: このツールのシンタックスは、ほぼ完全に [Vue](https://vuejs.org/) (それと、[Angular](https://angularjs.org/)による拡張)から借用しています。ウェブからの賜り物に感謝しています。
+> 注意: このツールのシンタックスは、ほぼ完全に [Vue](https://vuejs.org/)（それと、[Angular](https://angularjs.org/) による拡張）から借用しています。ウェブからの賜り物に感謝しています。
 
 ## Install
 
@@ -29,7 +29,7 @@ npm i alpinejs
 import 'alpinejs'
 ```
 
-IE11 では、ポリフィルを提供する必要があります。 次のスクリプトを上記の Alpine スクリプトの前にロードしてください。
+IE11 では、ポリフィルを提供する必要があります。次のスクリプトを上記の Alpine スクリプトの前にロードしてください。
 ```html
 <script src="https://polyfill.io/v3/polyfill.min.js?features=MutationObserver%2CArray.from%2CArray.prototype.forEach%2CMap%2CSet%2CArray.prototype.includes%2CString.prototype.includes%2CPromise%2CNodeList.prototype.forEach%2CObject.values%2CReflect%2CReflect.set"></script>
 
@@ -64,7 +64,7 @@ IE11 では、ポリフィルを提供する必要があります。 次のス�
 ```
 
 自明ではないことにも使用できます:
-*ホバー時にドロップダウンのHTMLコンテンツをプリフェッチする*
+*ホバー時にドロップダウンの HTML コンテンツをプリフェッチする*
 ```html
 <div x-data="{ open: false }">
     <button
@@ -125,7 +125,7 @@ IE11 では、ポリフィルを提供する必要があります。 次のス�
 
 `x-data` は新しいコンポーネントスコープを宣言します。フレームワークに、データオブジェクトを使用して新しいコンポーネントを初期化するよう指示します。
 
-Vueコンポーネントの `data`プロパティのように考えてください。
+Vue コンポーネントの `data` プロパティのように考えてください。
 
 **コンポーネントロジックの抽出**
 
@@ -133,10 +133,10 @@ Vueコンポーネントの `data`プロパティのように考えてくださ�
 
 ```html
 <div x-data="dropdown()">
-    <button x-on:click="open()">Open</button>
+    <button x-on:click="open()">オープン</button>
 
     <div x-show="isOpen()" x-on:click.away="close()">
-        // Dropdown
+        // ドロップダウン
     </div>
 </div>
 
@@ -167,7 +167,7 @@ Vueコンポーネントの `data`プロパティのように考えてくださ�
 
 `x-init` はコンポーネントが初期化されると式を実行します。
 
-Alpine が DOM（VueJS の `mounted()` フックのようなもの）に最初の更新を行った後にコードを実行したい場合、 `x-init` からコールバックを返すことができ、その後実行されます：
+Alpine が DOM（VueJS の `mounted()` フックのようなもの）に最初の更新を行った後にコードを実行したい場合、`x-init` からコールバックを返すことができ、その後実行されます：
 
 `x-init="return () => { // ここで初期化後の DOM ステートにアクセスできます // }"`
 
@@ -184,7 +184,7 @@ Alpine が DOM（VueJS の `mounted()` フックのようなもの）に最初�
 
 ### `x-bind`
 
-> 注意: 短い 「:」 シンタックスを使えます: `:type="..."`
+> 注意: 短い「:」シンタックスを使えます: `:type="..."`
 
 **例:** `<input x-bind:type="inputType">`
 
@@ -192,7 +192,7 @@ Alpine が DOM（VueJS の `mounted()` フックのようなもの）に最初�
 
 `x-bind` は、属性の値を JavaScript 式の結果を設定します。この式は、コンポーネントのデータオブジェクトのすべてのキーにアクセスでき、データが更新されるたびに反映されます。
 
-> 注意: 属性バインディングは、依存関係が更新されたときにのみ更新されます。 このフレームワークは、データの変化を観察し、どのバインディングがそれらを検出するのか最適化されています。
+> 注意: 属性バインディングは、依存関係が更新されたときにのみ更新されます。このフレームワークは、データの変化を観察し、どのバインディングがそれらを検出するのか最適化されています。
 
 **`x-bind` for class attributes**
 
@@ -214,7 +214,7 @@ Alpine が DOM（VueJS の `mounted()` フックのようなもの）に最初�
 
 `myVar` が true または false の場合に `disabled` 属性を追加または削除します。
 
-`readonly`、`required` など、最も一般的なブール属性がサポートされています。
+`readonly`, `required` など、最も一般的なブール属性がサポートされています。
 
 ---
 
@@ -256,7 +256,7 @@ Alpine が DOM（VueJS の `mounted()` フックのようなもの）に最初�
 **`.stop` 修飾子**
 **例:** `<div x-on:click="foo = 'bar'"><button x-on:click.stop></button></div>`
 
-イベントリスナに `.stop` を追加すると、トリガされたイベントで`stopPropagation` が呼び出されます。上記の例では、ボタンから外側の `<div>` に「click」イベントが浮上しないことを意味します。言い換えると、ユーザがボタンをクリックしても、`foo` は`'bar'`に設定されません。
+イベントリスナに `.stop` を追加すると、トリガされたイベントで `stopPropagation` が呼び出されます。上記の例では、ボタンから外側の `<div>` に「click」イベントが浮上しないことを意味します。言い換えると、ユーザがボタンをクリックしても、`foo` は `'bar'` に設定されません。
 
 **`.window` 修飾子**
 **例:** `<div x-on:resize.window="isOpen = window.outerWidth > 768 ? false : open"></div>`
@@ -366,7 +366,7 @@ Alpine は仮想 DOM を使用しないため、`<template></template>` タグ�
 </template>
 ```
 
-Alpine は、「非表示」と「表示」の遷移間のさまざまな段階にクラスを要素に適用するための6つの異なるトランジションディレクティブを提供します。 これらのディレクティブは、`x-show` と `x-if` の両方で機能します。
+Alpine は、「非表示」と「表示」の遷移間のさまざまな段階にクラスを要素に適用するための6つの異なるトランジションディレクティブを提供します。これらのディレクティブは、`x-show` と `x-if` の両方で機能します。
 
 これらは、VueJs のトランジションディレクティブとまったく同じように動作しますが、より理にかなった異なる名前を持っています。
 
@@ -384,7 +384,7 @@ Alpine は、「非表示」と「表示」の遷移間のさまざまな段階�
 ### `x-cloak`
 **例:** `<div x-data="{}" x-cloak></div>`
 
-Alpine の初期化時に、要素から `x-cloak` 属性が削除されます。 これは、事前に初期化された DOM を隠すのに役立ちます。これが機能するためには、通常、次のグローバルスタイルを追加します。:
+Alpine の初期化時に、要素から `x-cloak` 属性が削除されます。これは、事前に初期化された DOM を隠すのに役立ちます。これが機能するためには、通常、次のグローバルスタイルを追加します。:
 
 ```html
 <style>
@@ -441,7 +441,7 @@ Alpine の初期化時に、要素から `x-cloak` 属性が削除されます�
 
 `$dispatch('some-event', { some: 'data' })` の2番目のパラメータとして渡されるデータは、新しいイベントの「detail」プロパティ: `$event.detail.some` です。カスタムイベントデータを `.detail` プロパティにアタッチすることは、ブラウザの `CustomEvent` の標準的な方法です。詳細は[こちらをご覧ください。](https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/detail)
 
-また、`$dispatch()`を使用して、`x-model` バインディングのデータ更新をトリガすることもできます。 例えば:
+また、`$dispatch()` を使用して、`x-model` バインディングのデータ更新をトリガすることもできます。 例えば:
 
 ```html
 <div x-data="{ foo: 'bar' }">
