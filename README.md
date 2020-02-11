@@ -184,7 +184,7 @@ Alpine が DOM（VueJS の `mounted()` フックのようなもの）に最初�
 
 ### `x-bind`
 
-> 注意: 短い ":" シンタックスを使えます: `:type="..."`
+> 注意: 短い 「:」 シンタックスを使えます: `:type="..."`
 
 **例:** `<input x-bind:type="inputType">`
 
@@ -203,7 +203,7 @@ Alpine が DOM（VueJS の `mounted()` フックのようなもの）に最初�
 例:
 `<div x-bind:class="{ 'hidden': foo }"></div>`
 
-この例では、"hidden"クラスは、`foo` データ属性値が `true` の場合にのみ適用されます。
+この例では、「hidden」クラスは、`foo` データ属性値が `true` の場合にのみ適用されます。
 
 **ブール属性の `x-bind`**
 
@@ -220,7 +220,7 @@ Alpine が DOM（VueJS の `mounted()` フックのようなもの）に最初�
 
 ### `x-on`
 
-> 注意： より短い"@"シンタックスを自由に使用できます: `@click="..."`
+> 注意： より短い「@」シンタックスを自由に使用できます: `@click="..."`
 
 **例:** `<button x-on:click="foo = 'bar'"></button>`
 
@@ -228,7 +228,7 @@ Alpine が DOM（VueJS の `mounted()` フックのようなもの）に最初�
 
 `x-on` は、イベントリスナを宣言された要素にアタッチします。そのイベントが発行されると、その値として設定された JavaScript 式が実行されます。
 
-式でデータが変更されると、このデータに"バインドされた"他の要素属性が更新されます。
+式でデータが変更されると、このデータに「バインドされた」他の要素属性が更新されます。
 
 **`keydown` 修飾子**
 
@@ -256,7 +256,7 @@ Alpine が DOM（VueJS の `mounted()` フックのようなもの）に最初�
 **`.stop` 修飾子**
 **例:** `<div x-on:click="foo = 'bar'"><button x-on:click.stop></button></div>`
 
-イベントリスナに `.stop` を追加すると、トリガされたイベントで`stopPropagation` が呼び出されます。上記の例では、ボタンから外側の `<div>` に"click"イベントが浮上しないことを意味します。言い換えると、ユーザがボタンをクリックしても、`foo` は`'bar'`に設定されません。
+イベントリスナに `.stop` を追加すると、トリガされたイベントで`stopPropagation` が呼び出されます。上記の例では、ボタンから外側の `<div>` に「click」イベントが浮上しないことを意味します。言い換えると、ユーザがボタンをクリックしても、`foo` は`'bar'`に設定されません。
 
 **`.window` 修飾子**
 **例:** `<div x-on:resize.window="isOpen = window.outerWidth > 768 ? false : open"></div>`
@@ -277,7 +277,7 @@ Alpine が DOM（VueJS の `mounted()` フックのようなもの）に最初�
 
 **構造:** `<input type="text" x-model="[data item]">`
 
-`x-model` は要素に"双方向データバインディング"を追加します。つまり、入力要素の値はコンポーネントの項目データの値と同期します。
+`x-model` は要素に「双方向データバインディング」を追加します。つまり、入力要素の値はコンポーネントの項目データの値と同期します。
 
 > 注意: `x-model` は、テキストインプット、チェックボックス、ラジオボタン、テキストエリア、セレクト、およびマルチセレクトの変更を検出するのに最適です。これらのシナリオでは [Vue の動作](https://vuejs.org/v2/guide/forms.html)が必要です。
 
@@ -366,7 +366,7 @@ Alpine は仮想 DOM を使用しないため、`<template></template>` タグ�
 </template>
 ```
 
-Alpine は、"非表示"と"表示"の遷移間のさまざまな段階にクラスを要素に適用するための6つの異なるトランジションディレクティブを提供します。 これらのディレクティブは、`x-show` と `x-if` の両方で機能します。
+Alpine は、「非表示」と「表示」の遷移間のさまざまな段階にクラスを要素に適用するための6つの異なるトランジションディレクティブを提供します。 これらのディレクティブは、`x-show` と `x-if` の両方で機能します。
 
 これらは、VueJs のトランジションディレクティブとまったく同じように動作しますが、より理にかなった異なる名前を持っています。
 
@@ -400,11 +400,11 @@ Alpine の初期化時に、要素から `x-cloak` 属性が削除されます�
 **例:**
 ```html
 <div x-data>
-    <button @click="$el.innerHTML = 'foo'">Replace me with "foo"</button>
+    <button @click="$el.innerHTML = 'foo'">"foo"に置換します</button>
 </div>
 ```
 
-`$el` is a magic property that can be used to retrieve the root component DOM node.
+`$el` は、ルートコンポーネントの DOM ノードを取得するために使用できるマジックプロパティです。
 
 ### `$refs`
 **例:**
@@ -414,7 +414,7 @@ Alpine の初期化時に、要素から `x-cloak` 属性が削除されます�
 <button x-on:click="$refs.foo.innerText = 'bar'"></button>
 ```
 
-`$refs` is a magic property that can be used to retrieve DOM elements marked with `x-ref` inside the component. This is useful when you need to manually manipulate DOM elements.
+`$refs` は、コンポーネント内で `x-ref` でマークされた DOM 要素を取得するために使用できるマジックプロパティです。これは、DOM 要素を手動で操作する必要がある場合に便利です。
 
 ---
 
@@ -424,7 +424,7 @@ Alpine の初期化時に、要素から `x-cloak` 属性が削除されます�
 <input x-on:input="alert($event.target.value)">
 ```
 
-`$event` is a magic property that can be used within an event listener to retrieve the native browser "Event" object.
+`$event` は、ネイティブブラウザの「Event」オブジェクトを取得するためにイベントリスナ内で使用できるマジックプロパティです。
 
 ---
 
@@ -433,21 +433,21 @@ Alpine の初期化時に、要素から `x-cloak` 属性が削除されます�
 ```html
 <div @custom-event="console.log($event.detail.foo)">
     <button @click="$dispatch('custom-event', { foo: 'bar' })">
-    <!-- When clicked, will console.log "bar" -->
+    <!-- クリックされると、 console.log が「bar」を出力します -->
 </div>
 ```
 
-`$dispatch` is a shortcut for creating a `CustomEvent` and dispatching it using `.dispatchEvent()` internally. There are lots of good use cases for passing data around and between components using custom events. [Read here](https://developer.mozilla.org/en-US/docs/Web/Guide/Events/Creating_and_triggering_events) for more information on the underlying `CustomEvent` system in browsers.
+`$dispatch` は、`CustomEvent` を作成し、内部で `.dispatchEvent()` を使用してディスパッチするためのショートカットです。カスタムイベントを使用してコンポーネント間およびコンポーネント間でデータを渡すには、多くの適切なユースケースがあります。基礎となるブラウザの `CustomEvent` システムの詳細については、[こちらをご覧ください。](https://developer.mozilla.org/en-US/docs/Web/Guide/Events/Creating_and_triggering_events)
 
-You will notice that any data passed as the second parameter to `$dispatch('some-event', { some: 'data' })`, becomes available through the new events "detail" property: `$event.detail.some`. Attaching custom event data to the `.detail` property is standard practice for `CustomEvent`s in browsers. [Read here](https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/detail) for more info.
+`$dispatch('some-event', { some: 'data' })` の2番目のパラメータとして渡されるデータは、新しいイベントの「detail」プロパティ: `$event.detail.some` です。カスタムイベントデータを `.detail` プロパティにアタッチすることは、ブラウザの `CustomEvent` の標準的な方法です。詳細は[こちらをご覧ください。](https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/detail)
 
-You can also use `$dispatch()` to trigger data updates for `x-model` bindings. For example:
+また、`$dispatch()`を使用して、`x-model` バインディングのデータ更新をトリガすることもできます。 例えば:
 
 ```html
 <div x-data="{ foo: 'bar' }">
     <span x-model="foo">
         <button @click="$dispatch('input', 'baz')">
-        <!-- After the button is clicked, `x-model` will catch the bubbling "input" event, and update foo to "baz". -->
+        <!-- ボタンがクリックされると、`x-model` は浮上する「input」イベントをキャッチし、foo を「baz」に更新します。 -->
     </span>
 </div>
 ```
