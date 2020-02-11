@@ -384,7 +384,7 @@ Alpine は、"非表示"と"表示"の遷移間のさまざまな段階にクラ
 ### `x-cloak`
 **例:** `<div x-data="{}" x-cloak></div>`
 
-`x-cloak` attributes are removed from elements when Alpine initializes. This is useful for hiding pre-initialized DOM. It's typical to add the following global style for this to work:
+Alpine の初期化時に、要素から `x-cloak` 属性が削除されます。 これは、事前に初期化された DOM を隠すのに役立ちます。これが機能するためには、通常、次のグローバルスタイルを追加します。:
 
 ```html
 <style>
