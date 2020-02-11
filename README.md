@@ -317,11 +317,11 @@ Alpine が DOM（VueJS の `mounted()` フックのようなもの）に最初�
 
 **構造:** `<template x-if="[expression]"><div>Some Element</div></template>`
 
-For cases where `x-show` isn't sufficient (`x-show` sets an element to `display: none` if it's false), `x-if` can be used to  actually remove an element completely from the DOM.
+`x-show` では不十分な場合（`x-show` が false の場合、要素を `display： none` に設定します）、`x-if` を使用して DOM から要素を完全に削除できます。
 
-It's important that `x-if` is used on a `<template></template>` tag because Alpine doesn't use a virtual DOM. This implementation allows Alpine to stay rugged and use the real DOM to work its magic.
+Alpine は仮想 DOM を使用しないため、`<template></template>` タグで `x-if` を使用することが重要です。この実装により、Alpine は堅牢性を保ち、実際の DOM を使用してその仕様を働かせることができます。
 
-> 注意: `x-if` must have a single element root inside the `<template></template>` tag.
+> 注意: `x-if` には、`<template></template>` タグ内に単一要素のルートが必要です。
 
 ---
 
@@ -333,9 +333,9 @@ It's important that `x-if` is used on a `<template></template>` tag because Alpi
 </template>
 ```
 
-`x-for` is available for cases when you want to create new DOM nodes for each item in an array. This should appear similar to `v-for` in Vue, with one exception of needing to exist on a `template` tag, and not a regular DOM element.
+`x-for` は、配列の各アイテム毎に新しい DOM ノードを作成する場合に使用します。これは、Vue の `v-for` に似ています。ただし、通常の DOM 要素ではなく、`template` タグに存在する必要があります。
 
-> 注意: the `:key` binding is optional, but HIGHLY recommended.
+> 注意: `：key` バインディングはオプションですが、強く推奨しています。
 
 ---
 
