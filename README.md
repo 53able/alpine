@@ -306,9 +306,9 @@ Alpine が DOM（VueJS の `mounted()` フックのようなもの）に最初�
 
 **構造:** `<div x-ref="[ref name]"></div><button x-on:click="$refs.[ref name].innerText = 'bar'"></button>`
 
-`x-ref` provides a convenient way to retrieve raw DOM elements out of your component. By setting an `x-ref` attribute on an element, you are making it available to all event handlers inside an object called `$refs`.
+`x-ref` は、コンポーネントから生 DOM 要素を取得する便利な方法を提供します。要素に `x-ref` 属性を設定することで、すべてのイベントハンドラで `$refs` というオブジェクト内から利用できるようになります。
 
-This is a helpful alternative to setting ids and using `document.querySelector` all over the place.
+これは、ID を設定し、あらゆる場所で `document.querySelector` を使用する代替手段に役立ちます。
 
 ---
 
