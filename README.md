@@ -366,18 +366,18 @@ Alpine は仮想 DOM を使用しないため、`<template></template>` タグ�
 </template>
 ```
 
-Alpine offers 6 different transition directives for applying classes to various stages of an element's transition between "hidden" and "shown" states. These directives work both with `x-show` AND `x-if`.
+Alpine は、"非表示"と"表示"の遷移間のさまざまな段階にクラスを要素に適用するための6つの異なるトランジションディレクティブを提供します。 これらのディレクティブは、`x-show` と `x-if` の両方で機能します。
 
-These behave exactly like VueJs's transition directives, except they have different, more sensible names:
+これらは、VueJs のトランジションディレクティブとまったく同じように動作しますが、より理にかなった異なる名前を持っています。
 
-| Directive | Description |
+| ディレクティブ | 説明 |
 | --- | --- |
-| `:enter` | Applied during the entire entering phase. |
-| `:enter-start` | Added before element is inserted, removed one frame after element is inserted. |
-| `:enter-end` | Added one frame after element is inserted (at the same time `enter-start` is removed), removed when transition/animation finishes.
-| `:leave` | Applied during the entire leaving phase. |
-| `:leave-start` | Added immediately when a leaving transition is triggered, removed after one frame. |
-| `:leave-end` | Added one frame after a leaving transition is triggered (at the same time `leave-start` is removed), removed when the transition/animation finishes.
+| `:enter` | エンターフェーズ全体に適用されます。 |
+| `:enter-start` | 要素が挿入される前に追加され、要素が挿入の1フレーム後に削除されます。 |
+| `:enter-end` | 要素が挿入後（`enter-start` が削除されると同時）の1フレームに追加され、トランジション/アニメーションが終了すると削除されます。
+| `:leave` | リーブフェーズ全体に適用されます。 |
+| `:leave-start` | リーブ遷移がトリガされるとすぐに追加され、1フレーム後に削除されます。 |
+| `:leave-end` | リーブ遷移がトリガされた後（同時に `leave-start` が削除される）の1フレームに追加され、トランジション/アニメーションが終了すると削除されます。
 
 ---
 
